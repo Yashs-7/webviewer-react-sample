@@ -4,10 +4,12 @@
   "private": true,
   "homepage": "https://pdftron.github.io/webviewer-react-sample",
   "dependencies": {
-    "react": "^16.6.0",
+    "@pdftron/webviewer": "^8.0.0",
+    "quill": "^1.3.7",
+    "react": "^16.14.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1",
-    "@pdftron/webviewer": "^8.0.0"
+    "react-quill": "^2.0.0",
+    "react-scripts": "2.1.1"
   },
   "devDependencies": {
     "btoa": "^1.2.1",
@@ -32,5 +34,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "[WebViewer](https://www.pdftron.com/documentation/web/) is a powerful JavaScript-based PDF Library that's part of the [PDFTron PDF SDK](https://www.pdftron.com). It provides a slick out-of-the-box responsive UI that interacts with the core library to view, annotate and manipulate PDFs that can be embedded into any web project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yashs-7/webviewer-react-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yashs-7/webviewer-react-sample/issues"
+  }
 }

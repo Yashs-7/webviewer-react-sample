@@ -1,14 +1,19 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import WebViewer from '@pdftron/webviewer';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import './App.css';
 
 const App = () => {
   const viewer = useRef(null);
+  const [content, setContent] = useState('');
 
-  // if using a class, equivalent of componentDidMount 
+  const handleContentChange = (newContent) => {
+    setContent(newContent);
+  };
+
   useEffect(() => {
-    WebViewer(
-      {
+    WebViewer({
         path: '/webviewer/lib',
         initialDoc: '/files/PDFTRON_about.pdf',
       },
@@ -19,7 +24,6 @@ const App = () => {
       documentViewer.addEventListener('documentLoaded', () => {
         const rectangleAnnot = new Annotations.RectangleAnnotation({
           PageNumber: 1,
-          // values are in page coordinates with (0, 0) in the top left
           X: 100,
           Y: 150,
           Width: 200,
@@ -28,7 +32,6 @@ const App = () => {
         });
 
         annotationManager.addAnnotation(rectangleAnnot);
-        // need to draw the annotation otherwise it won't show up until the page is refreshed
         annotationManager.redrawAnnotation(rectangleAnnot);
       });
     });
@@ -36,8 +39,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="header">React sample</div>
-      <div className="webviewer" ref={viewer}></div>
+      <div className="header"><img src="../assets/apple-touch-icon.png" height="50px" Width="50px"  alt="brand logo"/> 
+       <div className='heading-text'>PDF Ellite</div> </div>
+      <div className="webviewer-container">
+        <div className="webviewer" ref={viewer}></div>
+        <div className="text-editor-container">
+          <ReactQuill value={content} onChange={handleContentChange} />
+        </div>
+      </div>
     </div>
   );
 };

@@ -15,3 +15,8 @@
   line-height: 44px;
   color: white;
 }
+
+.heading-text{
+  display: inline;
+  margin-bottom: 20px;
+}

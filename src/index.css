@@ -6,9 +6,19 @@ html, body, #root {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.webviewer-container{
+  display: flex;
+}
 .webviewer {
-  flex: 1;
+  width: 60%;
+  height: 400%;
   margin: 8px;
   -webkit-box-shadow: 1px 1px 10px #999;
-          box-shadow: 1px 1px 10px #999;
+  box-shadow: 1px 1px 10px #999;
 }
+.text-editor-container{
+  width: 40%;
+  height: 200%;
+  margin: 8px;
+}
+
